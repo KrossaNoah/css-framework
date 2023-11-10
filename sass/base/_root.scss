@@ -1,0 +1,22 @@
+@use '../config/color' as *;
+
+
+// By default dark mode is active
+:root {
+    @each $name, $color in $color-dark-map {
+        --color-#{$name}: #{$color};
+    }
+}
+
+.dark-mode {
+    @each $name, $color in $color-dark-map {
+        --color-#{$name}: #{$color};
+    }
+}
+
+
+.light-mode {
+    @each $name, $color in $color-light-map {
+        --color-#{$name}: #{$color};
+    }
+}
