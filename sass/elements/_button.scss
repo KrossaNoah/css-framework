@@ -10,8 +10,8 @@
     background-color: color(primary, 100);
     border: none;
     font-family: sans-serif;
+    border-radius: 3px;
 
     @include theme-modefiers($hover:true, $focus: true);
-    
     @include theme-modefiers-light($hover:true, $focus: true);
 }

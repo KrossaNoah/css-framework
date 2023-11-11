@@ -5,13 +5,14 @@
 /// this mixins are internal
 @mixin _focus($color) {
     &:focus {
-        outline: 2px solid $color;
+        border-color:  $color;
     }
 }
 
 @mixin _hover($color) {
     &:hover {
         background-color: $color;
+        border-color: $color;
     }
 }
 
@@ -22,9 +23,9 @@
 /// [!] see config/color for more info abaut colors.
 @mixin theme-modefiers($hover:false, $focus:false) {
     @each $theme-type in $color-palette-keys {
-
         // Is modefier
         &.is-#{$theme-type} {
+            border:2px solid color($theme-type, 400);
             background-color: color($theme-type, 400);
             color: color($theme-type, 100);
             transition: all .3s;
@@ -57,6 +58,7 @@
             color-scheme: dark;
             &.is-#{$theme-type} {
                 background-color: color($theme-type, 100);
+                border:2px solid color($theme-type, 100);
                 color: color($theme-type, 500);
                 transition: all .3s;
     
