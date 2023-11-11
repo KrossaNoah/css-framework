@@ -9,6 +9,7 @@
 }
 
 .dark-mode {
+    color-scheme: normal;
     @each $name, $color in $color-dark-map {
         --color-#{$name}: #{$color};
     }
@@ -16,6 +17,7 @@
 
 
 .light-mode {
+    color-scheme: light;
     @each $name, $color in $color-light-map {
         --color-#{$name}: #{$color};
     }

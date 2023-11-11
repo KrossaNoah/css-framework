@@ -85,3 +85,15 @@
 
 
 
+/// This theme is for inputs
+@mixin  input-theme-modefiers {
+    @each $type in $color-palette-keys {
+        &.is-#{$type} {
+            input {
+                box-shadow: 0 0 2px  1px color($type, 500);
+                background-color: color($type, 100);
+                color: color($type, 500);
+            }
+        }
+    }
+}

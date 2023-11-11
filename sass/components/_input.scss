@@ -1,0 +1,36 @@
+@use '../config/layout' as *;
+@use '../functions/color' as *;
+@use '../mixins/themes' as *;
+
+.input-control {
+// Test 
+    padding: 1rem;
+    color: var(--color-txt2);
+
+    label {
+        display: block;
+        font-size: small;
+        font-weight: bold;
+        margin-bottom: $unit*2;
+    }
+
+    input {
+        border-radius: 3px;
+        padding: $unit*7;
+        background-color: var(--color-bg2);
+        border: 0;
+        outline: none;
+        color: inherit;
+        width: 100%;
+        &::placeholder {
+            opacity: .5;
+            color: inherit;
+        }
+        &:focus {
+            box-shadow: 0 0 2px  1px color(info, 400);
+        }
+    }
+
+    // Modefiers
+   @include input-theme-modefiers;
+}
