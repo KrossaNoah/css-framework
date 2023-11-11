@@ -1,1 +1,116 @@
-@use 'sass:math';
+
+/// Color configuration
+/// We have the follwing type of colors
+/// + primary
+/// + secondary
+/// + link
+/// + info
+/// + success
+/// + warning
+/// + danger
+
+
+$color-link-map:(
+    100: #eceaf8,
+    200: #c5bfea,
+    300: #9e95dc,
+    400: #786acd,
+    500: #5140bf,
+    600: #3f3295,
+    700: #3f3295,
+    800: #1b1540,
+    900: #090715,
+);
+
+$color-info-map:(
+    100: #eaeff8,
+    200: #bfd0ea,
+    300: #95b1dc,
+    400: #6a92cd,
+    500: #4073bf,
+    600: #325995,
+    700: #23406a,
+    800: #23406a,
+    900: #070d15,
+);
+
+$color-success-map:(
+    100: #eaf8eb,
+    200: #bfeac3,
+    300: #95dc9c,
+    400: #6acd74,
+    500: #40bf4c,
+    600: #32953b,
+    700: #236a2a,
+    800: #154019,
+    900: #071508,
+);
+
+
+$color-warning-map:(
+    100: #f8f5ea,
+    200: #eae1bf,
+    300: #dccc95,
+    400: #cdb86a,
+    500: #bfa440,
+    600: #957f32,
+    700: #6a5b23,
+    800: #403715,
+    900: #151207,
+);
+
+
+$color-danger-map:(
+    100: #f8eaea,
+    200: #eabfbf,
+    300: #dc9595,
+    400: #cd6a6a,
+    500: #bf4040,
+    600: #953232,
+    700: #6a2323,
+    800: #401515,
+    900: #150707,
+);
+
+
+
+$color-primary-map:(
+    100: #eaf8f8,
+    200: #bfe9ea,
+    300: #94dbdc,
+    400: #69ccce,
+    500: #3fbec0,
+    600: #319496,
+    700: #236a6b,
+    800: #153f40,
+    900: #071515,
+);
+
+
+$color-secondary-map:(
+    100: #f1f1f1,
+    200: #d4d4d4,
+    300: #b8b8b8,
+    400: #9c9c9c,
+    500: #808080,
+    600: #636363,
+    700: #474747,
+    800: #2a2a2a,
+    900: #0e0e0e,
+);
+
+
+// here we wrapp all colors in a map
+$color-palette-map: (
+    'primary': $color-primary-map,
+    'secondary': $color-secondary-map,
+    'link': $color-link-map,
+    'info': $color-info-map,
+    'success': $color-success-map,
+    'warning': $color-warning-map,
+    'danger': $color-danger-map,
+);
+
+$color-palette-keys: map-keys($color-palette-map);
+
+

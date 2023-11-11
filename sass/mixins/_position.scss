@@ -1,0 +1,21 @@
+
+// This mixin help us to setup quickly position
+@mixin pos($l:auto, $t:auto, $r:auto, $b:auto) {
+    left: $l;
+    top: $t;
+    right: $r;
+    bottom: $b;
+}
+
+// For absolute position
+@mixin abs($l:auto, $t:auto, $r:auto, $b:auto) {
+    position: absolute;
+    @include pos($l, $t, $r, $b);
+}
+
+
+// For fixed position
+@mixin fix($l:auto, $t:auto, $r:auto, $b:auto) {
+    position: fix;
+    @include pos($l, $t, $r, $b);
+}

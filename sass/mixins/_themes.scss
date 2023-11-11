@@ -1,0 +1,14 @@
+@use '../functions/color' as *;
+@use '../config/color' as *;
+/// The following mixins help us to generate theme styles
+/// by each color types.
+/// [!] see config/color for more info abaut colors.
+
+@mixin generate-theme-modefiers {
+    @each $theme-type in $color-palette-keys {
+        &.is-#{$theme-type} {
+            background-color: color($theme-type, 500);
+            color: color($theme-type, 100)
+        }
+    }
+}

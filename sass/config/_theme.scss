@@ -1,0 +1,18 @@
+/// We have 2 theme mode
+/// + dark 
+/// + light
+/// each theme mode has 2 variations for background and color text
+
+$color-dark-map: (
+    bg1: #070d15,
+    bg2: #0f1b2c,
+    txt1: #f0f4fa,
+    txt2: #b5c9e6
+);
+
+$color-light-map: (
+    bg1: #f0f4fa,
+    bg2: #e4ebf6,
+    txt1:#e4ebf6,
+    txt2:#e4ebf6
+);
