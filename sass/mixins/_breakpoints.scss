@@ -6,13 +6,11 @@
 }
 
 
-
 @mixin bp-max($size) {
     @media screen and (max-width:$size) {
         @content;
     }
 }
-
 
 
 @mixin bp-between($min-size, $max-size) {
