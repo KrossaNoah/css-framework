@@ -1,14 +1,85 @@
 @use '../functions/color' as *;
 @use '../config/color' as *;
+
+
+/// this mixins are internal
+@mixin _focus($color) {
+    &:focus {
+        outline: 2px solid $color;
+    }
+}
+
+@mixin _hover($color) {
+    &:hover {
+        background-color: $color;
+    }
+}
+
+
+
 /// The following mixins help us to generate theme styles
 /// by each color types.
 /// [!] see config/color for more info abaut colors.
-
-@mixin generate-theme-modefiers {
+@mixin theme-modefiers($hover:false, $focus:false) {
     @each $theme-type in $color-palette-keys {
+
+        // Is modefier
         &.is-#{$theme-type} {
-            background-color: color($theme-type, 500);
-            color: color($theme-type, 100)
+            background-color: color($theme-type, 400);
+            color: color($theme-type, 100);
+            transition: all .3s;
+
+            @if $hover == true {
+                @include _hover(color($theme-type, 300));
+            }
+
+            @if $focus == true {
+                @include _focus(color($theme-type, 300));
+            }
+
+            // Has modefiers:
+            &.has-hover {
+                @include _hover(color($theme-type, 300));
+            }
+
+            &.has-focus {
+                @include _focus(color($theme-type, 300));
+            }
         }
     }
 }
+
+
+@mixin theme-modefiers-light($hover:false, $focus:false) {
+    @each $theme-type in $color-palette-keys {
+        &.is-light {
+            // Is modefier
+            color-scheme: dark;
+            &.is-#{$theme-type} {
+                background-color: color($theme-type, 100);
+                color: color($theme-type, 500);
+                transition: all .3s;
+    
+                @if $hover == true {
+                    @include _hover(color($theme-type, 200));
+                }
+    
+                @if $focus == true {
+                    @include _focus(color($theme-type, 200));
+                }
+    
+                // Has modefiers:
+                &.has-hover {
+                    @include _hover(color($theme-type, 200));
+                }
+    
+                &.has-focus {
+                    @include _focus(color($theme-type, 200));
+                }
+            }
+        }
+    }
+}
+
+
+

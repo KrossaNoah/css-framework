@@ -1,0 +1,17 @@
+@use '../config/layout' as *;
+@use '../functions/color' as *;
+@use '../mixins/themes' as *;
+
+
+
+.button {
+    padding: $unit*5 $unit*10;
+    cursor: pointer;
+    background-color: color(primary, 100);
+    border: none;
+    font-family: sans-serif;
+
+    @include theme-modefiers($hover:true, $focus: true);
+    
+    @include theme-modefiers-light($hover:true, $focus: true);
+}
