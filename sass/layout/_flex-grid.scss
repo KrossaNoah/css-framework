@@ -1,0 +1,27 @@
+@use '../config/layout' as *;
+@use '../mixins/breakpoints' as *;
+
+
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    @for $i from 1 through 20 {
+        .col#{$i*5} {
+            width: $i*5%;
+            height: 20px;
+            outline: 1px dashed red;
+        }
+    }
+
+
+    @each $name, $bp in $breakpoint-map {
+        @include bp-least($bp) {
+            @for $i from 1 through 20 {
+                .col#{$i*5}-#{$name} {
+                    width: $i *5%;
+                } 
+            }
+        }
+    }
+}

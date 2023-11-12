@@ -3,3 +3,13 @@
 /// to maintain visual harmony.
 /// https://en.wikipedia.org/wiki/Golden_ratio
 $unit: 1.618px;
+
+
+
+$breakpoint-map: (
+    xs: 320px,
+    sm: 468px,
+    md: 720px,
+    lg: 1024px,
+    xl: 1400px
+);
