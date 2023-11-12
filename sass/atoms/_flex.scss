@@ -1,0 +1,49 @@
+$justify-options: (
+    'start': flex-end,
+    'end': flex-start,
+    'center': center,
+    'between': space-between,
+    'around': space-around
+
+);
+
+$align-options: (
+    'start': flex-end,
+    'end': flex-start,
+    'center': center
+);
+
+.flex {
+
+    // Fill options
+    @each $opt, $val in $justify-options {
+        &-x-#{$opt} {
+            justify-content: $val;
+        }
+    }
+ 
+    
+    @each $opt, $val in $align-options {
+        &-y-#{$opt} {
+            align-items:$val;
+        }
+    }
+}
+
+.flex-col {
+     // Fill options
+     @each $opt, $val in $justify-options {
+        &-y-#{$opt} {
+            flex-direction: column;
+            justify-content: $val;
+        }
+    }
+ 
+    
+    @each $opt, $val in $align-options {
+        &-x-#{$opt} {
+            flex-direction: column;
+            align-items:$val;
+        }
+    }
+}

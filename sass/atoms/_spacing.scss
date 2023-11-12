@@ -1,0 +1,47 @@
+@use '../config/layout' as *;
+
+$directions: ('left', 'right', 'top', 'bottom');
+
+// Margin
+.m {
+    @for $i from 1 through 20 {
+        &#{$i} {
+            margin: $unit*$i;
+            
+            @each $dir in $directions {
+                &-#{$dir} {
+                    margin-#{$dir}: $unit*$i;
+                }
+            }
+        }
+    }
+}
+
+
+// Padding
+.p {
+    @for $i from 1 through 20 {
+        &#{$i} {
+            padding: $unit*$i;
+            
+            @each $dir in $directions {
+                &-#{$dir} {
+                    padding-#{$dir}: $unit*$i;
+                }
+            }
+        }
+    }
+}
+
+
+// Gap
+.gap {
+    @for $i from 1 through 20 {
+        &#{$i}-row {
+            row-gap: $unit*$i;
+        }
+        &#{$i}-col {
+            column-gap: $unit*$i;
+        }
+    }
+}
