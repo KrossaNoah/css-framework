@@ -1,0 +1,5 @@
+@use '../config/font' as *;
+
+@function font-size($size) {
+    @return map-get($font-size-map, $size);
+}

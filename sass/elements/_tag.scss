@@ -1,0 +1,17 @@
+@use '../config/layout' as *;
+
+@use '../functions/root' as *;
+@use '../functions/font' as *;
+
+@use '../mixins/themes' as *;
+
+
+.tag {
+    padding: $unit*3 $unit*6;
+    border: 2px solid root-color(bg2);
+    border-radius: 3px;
+    background-color: root-color(bg2);
+    font-size: font-size(xs);
+    @include theme-modefiers;    
+    @include theme-modefiers-light;
+}
