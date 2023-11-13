@@ -1,0 +1,9 @@
+@use '../config/font' as *;
+
+.font {
+    @each $name, $size in $font-size-map {
+        &-#{$name} {
+            font-size: $size;
+        }
+    }
+}

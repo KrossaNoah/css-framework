@@ -37,6 +37,15 @@ $directions: ('left', 'right', 'top', 'bottom');
 // Gap
 .gap {
     @for $i from 1 through 20 {
+        &#{$i} {
+            row-gap: $unit*$i;
+            column-gap: $unit*$i;
+        }
+    }
+}
+
+.gap {
+    @for $i from 1 through 20 {
         &#{$i}-row {
             row-gap: $unit*$i;
         }
