@@ -1,0 +1,28 @@
+@use '../mixins/themes' as *;
+@use '../functions/color' as *;
+
+
+.navegation {
+    display: flex;
+    align-items: center;
+    text-wrap: nowrap;
+    font-size: font-size(sm);
+    
+    &-middle {
+        margin: auto;
+    }
+    
+
+    nav {
+        display: flex;
+        a {
+            text-decoration: none;
+            color: inherit;
+            &:hover {
+                color: color(info, 500)
+            }
+        }
+    }
+
+    @include theme-modefiers;
+}
